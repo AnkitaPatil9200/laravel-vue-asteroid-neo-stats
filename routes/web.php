@@ -24,3 +24,5 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+
+Route::post('/get-asteroids-data', 'App\Http\Controllers\HomeController@getAsteroidsData');

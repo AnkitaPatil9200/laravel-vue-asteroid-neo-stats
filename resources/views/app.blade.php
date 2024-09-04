@@ -14,6 +14,7 @@
     <!-- Scripts -->
     @routes
     @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
+    @vite('resources/css/app.css')
     @inertiaHead
 </head>
 
@@ -22,6 +23,10 @@
     <div class="min-h-screen bg-gray-100" id="app">
 
     </div>
+    <!-- chartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- flowbite js -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
 </body>
 
 </html>
