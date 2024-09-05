@@ -132,7 +132,7 @@ export default {
                 this.fa_size = response.data.data.fastest_asteroid_data.average_size;
 
                 // place response data for closest asteroid
-                this.ca_id =response.data.data.closest_asteroid_data.id;
+                this.ca_id = response.data.data.closest_asteroid_data.id;
                 this.ca_distance = response.data.data.closest_asteroid_data.distance;
                 this.ca_size = response.data.data.closest_asteroid_data.average_size;
 
