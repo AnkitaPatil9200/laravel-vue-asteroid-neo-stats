@@ -1,45 +1,58 @@
 <template>
-    <div
-        class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <!-- Alert Message -->
-        <p :class="alertMessageClass">{{ alertMessage }}</p>
-        <!-- Form -->
-        <form class="space-y-6" @submit.prevent="getAsteroidsData">
-            <!-- Tailwind Datepicker -->
-            <vue-tailwind-datepicker v-model="dateValue" placeholder="Select Start and End Dates" :shortcuts="false"
-                separator=" to " :formatter="formatter" as-single use-range />
-            <button type="submit"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
-        </form>
+    <div class="row">
+        <div class="flex justify-center">
+            <div
+                class="w-full max-w-sm p-1 m-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <!-- Alert Message -->
+                <p :class="alertMessageClass">{{ alertMessage }}</p>
+                <!-- Form -->
+                <form class="space-y-6" @submit.prevent="getAsteroidsData">
+                    <!-- Tailwind Datepicker -->
+                    <vue-tailwind-datepicker v-model="dateValue" placeholder="Select Start and End Dates"
+                        :shortcuts="false" separator=" to " :formatter="formatter" as-single use-range />
+                    <button type="submit"
+                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
+    <div class="row">
+        <div class="flex justify-center">
+            <!-- Card to display Fastest Asteroid data -->
+            <div>
+                <a
+                    class="m-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Fastest Asteroid
+                    </h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">{{ fa_id }}</p>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">{{ fa_speed }}</p>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">{{ fa_size }}</p>
 
-    <!-- Card to display Fastest Asteroid data -->
-    <a
-        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Fastest Asteroid
-        </h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">{{ fa_id }}</p>
-        <p class="font-normal text-gray-700 dark:text-gray-400">{{ fa_speed }}</p>
-        <p class="font-normal text-gray-700 dark:text-gray-400">{{ fa_size }}</p>
+                </a>
+            </div>
+            <!-- Card to display Closest Asteroid data -->
+            <div>
+                <a
+                    class="m-4 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        Closest Asteroid
+                    </h5>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">{{ ca_id }}</p>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">{{ ca_distance }}</p>
+                    <p class="font-normal text-gray-700 dark:text-gray-400">{{ ca_size }}</p>
 
-    </a>
-
-    <!-- Card to display Closest Asteroid data -->
-    <a
-        class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Closest Asteroid
-        </h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400">{{ ca_id }}</p>
-        <p class="font-normal text-gray-700 dark:text-gray-400">{{ ca_distance }}</p>
-        <p class="font-normal text-gray-700 dark:text-gray-400">{{ ca_size }}</p>
-
-    </a>
-
-    <!-- Canvas to display chart -->
-    <div>
-        <canvas id="neoStatChart" width="50px"></canvas>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="flex justify-center ">
+            <!-- Canvas to display chart -->
+            <div class="w-6/12 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                <canvas id="neoStatChart"></canvas>
+            </div>
+        </div>
     </div>
 </template>
 
