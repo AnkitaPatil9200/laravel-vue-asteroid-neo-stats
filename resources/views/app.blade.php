@@ -19,9 +19,8 @@
 </head>
 
 <body class="font-sans antialiased">
-    @inertia
-    <div class="min-h-screen bg-gray-100" id="app">
-
+    <div class="min-h-screen" id="app">
+        @inertia
     </div>
     <!-- chartjs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
