@@ -31,7 +31,7 @@ Generate a new application key
 
     php artisan key:generate
 
-Start the local development server
+Start the local development server for Laravel
 
     php artisan serve
 
@@ -47,7 +47,7 @@ You can now access the server at http://localhost:8000
     cp .env.example .env
     php artisan key:generate
 
-## Installation of npm Vue.js and Vue Loader
+## Installation of Vue.js and Vue Loader
 
 Run below command
 
@@ -56,6 +56,10 @@ Run below command
 Install Vue.js plugin for Vite
 
     npm i @vitejs/plugin-vue
+
+Start the local development server for Vue.js
+
+    npm run dev
 
 ## API Specification
 
