@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row" v-if="isSuccessResponseReceived">
         <div class="flex justify-center">
             <!-- Card to display Fastest Asteroid data -->
             <div>
@@ -49,7 +49,7 @@
     <div class="row">
         <div class="flex justify-center ">
             <!-- Canvas to display chart -->
-            <div class="w-6/12 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="w-6/12">
                 <canvas id="neoStatChart"></canvas>
             </div>
         </div>
@@ -82,7 +82,8 @@ export default {
             ca_size: '',
             dateValue: [],
             alertMessage: '',
-            alertMessageClass: ''
+            alertMessageClass: '',
+            isSuccessResponseReceived: false,
         }
     },
     // define methods
@@ -101,10 +102,11 @@ export default {
 
             console.log(response);
             if (response.data.status) { // success response
-
+                
                 // display success alert message
                 this.alertMessage = response.data.message;
                 this.alertMessageClass = 'text-green-400';
+                this.isSuccessResponseReceived = true;
 
                 // place response data for fastest asteroid
                 this.fa_id = 'ID : ' + response.data.data.fastest_asteroid_data.id;
@@ -121,6 +123,7 @@ export default {
             } else {
                 // clear stats
                 this.fa_id = this.fa_speed = this.fa_size = this.ca_id = this.ca_distance = this.ca_size = '';
+                this.isSuccessResponseReceived = false;
 
                 // destroy previous instance of chart
                 if (typeof neoStatChart !== "undefined") {
